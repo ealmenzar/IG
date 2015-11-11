@@ -1,0 +1,23 @@
+#ifndef MALLAIND_HPP
+#define MALLAIND_HPP
+
+#include "Objeto3D.hpp"
+#include "tuplasg.hpp"
+#include <vector>
+#include "aux.hpp"
+
+// clase para mallas indexadas o mallas TVT
+class MallaInd : public Objeto3D
+{
+   protected:
+   // declarar aquí tablas de vértices y caras
+   std::vector<Tupla3f> tablaVertices;
+   std::vector<Tupla3i> tablaCaras;
+   std::vector<Tupla3i> caraColor1;
+   std::vector<Tupla3i> caraColor2;
+
+   public:
+      virtual void visualizar( unsigned modo_vis ) ;
+} ;
+
+#endif
