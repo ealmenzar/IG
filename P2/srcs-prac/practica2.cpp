@@ -18,31 +18,25 @@ static MallaPLY *miMallaPLY = NULL;
 static MallaRevol *miMallaRevol = NULL;
 
 // ---------------------------------------------------------------------
-// Función para implementar en la práctica 1 para inicialización.
-// Se llama una vez al inicio, cuando ya se ha creado la ventana e 
-// incializado OpenGL. 
 
 void P2_Inicializar( int argc, char *argv[] )
 {
-if (argc != 2){
-cout << "Falta el archivo PLY" << endl;
-exit(2);
+
+if (argc == 4){
+	miMallaPLY = new MallaPLY(argv[1]);
+	miMallaRevol = new MallaRevol(argv[2],atoi(argv[3]));
 }
-//const char *archivo = argv[1];  
-miMallaPLY = new MallaPLY(argv[1]);
-miMallaRevol = new MallaRevol("/home/marina/Escritorio/IG/p2/plys/peon.ply",3);
+else if (argc == 2){
+	miMallaPLY = new MallaPLY(argv[1]);
+	miMallaRevol = new MallaRevol("../plys/peon.ply",40);
+}
+else{
+	cout << "Faltan los argumentos. Ejecutar: ./prac 'nombre_archivo.ply'"<<endl;
+	cout << "También puede ejecutar: ./prac 'nombre_archivo.ply perfil.ply num_perfiles'" << endl;
+	exit(2);
+}
  
 }
-
-// ---------------------------------------------------------------------
-// Función invocada al pulsar una tecla con la práctica 1 activa:
-// (si la tecla no se procesa en el 'main').
-//
-//  - devuelve 'true' si la tecla se usa en esta práctica para cambiar 
-//    entre el cubo, el tetraedro u otros objetos (cambia el valor de
-//    'p2_objeto_activo').
-//  - devuelve 'false' si la tecla no se usa en esta práctica (no ha
-//    cambiado nada)
 
 bool P2_FGE_PulsarTeclaNormal( unsigned char tecla ) 
 {
@@ -59,10 +53,7 @@ bool P2_FGE_PulsarTeclaNormal( unsigned char tecla )
 	return res;
 }
 
-
 // ---------------------------------------------------------------------
-// Función a implementar en la práctica 1  para dibujar los objetos
-// modo: 0 - puntos, 1 - alambre, 2 - sólido, 3 - sólido ajedrez , >=4 otros....
 
 void P2_DibujarObjetos( unsigned modo ) 
 {
@@ -74,10 +65,3 @@ void P2_DibujarObjetos( unsigned modo )
 		miMallaRevol->visualizar(modo);
 	}
 }
-
-
-
-
-
-
-

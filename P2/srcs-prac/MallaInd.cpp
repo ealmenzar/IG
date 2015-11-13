@@ -3,7 +3,6 @@
 void MallaInd::visualizar(unsigned modo_vis){
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glVertexPointer(3, GL_FLOAT, 0, &tablaVertices.front());
-	//glColor3f(1,1,0);
 
 	switch(modo_vis){
 		case 0:
