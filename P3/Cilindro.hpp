@@ -1,0 +1,11 @@
+#include "MallaInd.hpp" 
+
+class Cilindro : public MallaInd
+{
+   public:
+      Cilindro();
+			int num_caras;
+			int num_vertices;
+			double angulo;
+			double rad;
+} ;

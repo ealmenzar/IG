@@ -1,0 +1,25 @@
+- S.O. usado para compilar: UBUNTU
+
+- Uso de teclas:
+		TECLA m/M: cambia el modo de visualización activo (pasa al siguiente, o del último al primero)
+		TECLA p/P: cambia la práctica activa (pasa a la siguiente, o de la última a la primera)
+		TECLA o/O: cambia el objeto activo dentro de la práctica (pasa al siguiente, o del último al primero)
+		TECLA g/G: activar grado de libertad siguiente al actual (o activar el primero si el actual era el último) 
+		TECLA >: aumentar el valor del grado de libertad actual (si el grado de libertad tiene asociado un máximo y ya se ha alcanzado, no hace nada)
+		TECLA <: disminuir el valor del grado de libertad actual (si el grado de libertad tiene asociado un mínimo y ya se ha alcanzado, no hace nada)
+
+- No se ha implementado la funcionalidad descrita en las extensiones.
+
+- A TENER EN CUENTA:
+		Una vez ejecutado el make, se imprime en pantalla un mensaje: 
+
+		"Faltan los argumentos. Ejecutar: ./prac 'nombre_archivo.ply'
+		También puede ejecutar: ./prac 'nombre_archivo.ply perfil.ply num_perfiles'"
+
+		Por defecto, en esta entrega, la práctica que se ejecuta es la 3, pero será necesario introducir estos datos por pantalla por si se pulsa la tecla P hasta llegar a la pŕactica 2.
+		Los detalles de las diferencias en cuanto a ejecutar "./prac 'nombre_archivo.ply'" o "./prac 'nombre_archivo.ply perfil.ply num_perfiles'" se explican en el leeme.txt de la práctica 2.
+
+	Se adjuntan los archivos .ply siguientes, necesarios para esta práctica 3: 
+	- flower.ply
+	- butterfly.ply
+	También se hace uso del archivo ant.ply, que no se adjunta en la entrega, pues ya está contenido en el material de prácticas.
